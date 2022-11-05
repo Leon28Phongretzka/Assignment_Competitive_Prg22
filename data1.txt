@@ -1,0 +1,6 @@
+ID           Name                       Mail                    Phone                   Bill
+1            Tran Nam Phong                abc@gmail.com           0331233443              425.000 VND
+2            Do Ngoc Tuan               def@gmail.com           0128472988              933.000 VND
+3            Pham Van Thinh               ghk@twerk.com           0128472988              653.000 VND
+4            Le Huy Binh                     ker@yahoo.com           0230847024              105.455 VND
+5            Phung Hoang Thanh Lich                ejo@twitch.com          0124068506              455     $

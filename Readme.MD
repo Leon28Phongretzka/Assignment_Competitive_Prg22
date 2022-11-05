@@ -1,0 +1,1 @@
+This is asshole, dumb code from anyone "deo thich code"
