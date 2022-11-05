@@ -17,13 +17,10 @@ void Customer::readCustomer()
     // read infor from file data1.txt
     string info; 
     getline(file, info);
-    // use deque to store data
     while(getline(file, info))
     {
         stringstream ss;
         ss << info;
-        deque<string> listCustomer;
-        map<int,string> tokens;
         size_t index=1;
         // Split the string into tokens
         while (ss >> info)
@@ -40,14 +37,21 @@ void Customer::readCustomer()
         {
             name += tokens[i];
         }
-        // add to listCustomer
-        listCustomer.push_back(to_string(ID));
-        listCustomer.push_back(name);
-        listCustomer.push_back(mail);
-        listCustomer.push_back(phone);
-        listCustomer.push_back(amount);
-        listCustomer.push_back(currency);
-        listCustomer.push_back("0");
+        // use map data to store data
+        data[to_string(ID)] = name;
+        // set wide between name and email
+        int wide = 30 - name.length();
+        // cout << wide << endl;
+        data[to_string(ID)] += string(wide, ' ');
+        data[to_string(ID)] = data[to_string(ID)] + mail + '\t' + phone + '\t' + amount + '\t' + currency;
+    }
+}
+void Customer::writeCustomer()
+{
+    // write infor to file data1.txt
+    for (auto &i : data)
+    {
+        cout << i.first << "\t" << i.second << endl;
     }
 }
 void Customer::menuCustomer()

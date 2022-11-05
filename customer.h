@@ -13,13 +13,13 @@ class Customer
         string email;
         string acNo;
         string currency;
-        // vector<string> listCustomer;
-        deque<string> listCustomer;
+        map<int,string> tokens;
+        map<string, string> data;
     public:
         Customer();                                                                                               // destructor
         void menuCustomer();                                                                                        // menu to pick customer's function
         void readCustomer();                                                                                        // Read customer data from file text
-        void writeCustomer(ofstream &fout);                                                                         // Write customer data to file text
+        void writeCustomer();                                                                         // Write customer data to file text
         void addCustomer();                                                                                         // Add customer data to file text
         void updateCustomer();                                                                                      // Update customer data to file text
         void deleteCustomer();                                                                                      // Delete customer data to file text
