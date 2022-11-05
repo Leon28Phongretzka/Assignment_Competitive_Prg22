@@ -59,17 +59,12 @@ void Customer::menuCustomer()
     int choice;
     do
     {
-        cout << "1. Add Customer" << endl;
-        cout << "2. Update Customer" << endl;
-        cout << "3. Delete Customer" << endl;
-        cout << "4. Search Customer" << endl;
-        cout << "5. Display Customer" << endl;
-        cout << "6. Money from Customer" << endl;
-        cout << "7. Money to Customer" << endl;
-        cout << "8. Round money" << endl;
-        cout << "9. Type of mail" << endl;
-        cout << "10. Type of currency" << endl;
-        cout << "0. Exit" << endl;
+        cout << "1. Add Customer" << '\t' << '\t' << "6. Money from Customer" << endl;
+        cout << "2. Update Customer" << '\t' << "7. Money to Customer" << endl;
+        cout << "3. Delete Customer" << '\t' << "8. Round Money" << endl;
+        cout << "4. Search Customer" << '\t' << "9. Type of Mail" << endl;
+        cout << "5. Display Customer" << '\t' << "10. Type of Currency" << endl;
+        cout << endl;
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice)
