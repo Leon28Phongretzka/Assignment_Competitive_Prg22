@@ -83,19 +83,7 @@ void ValidateEmail(string email)
         cout << "Email is invalid" << endl;
     }
 }
-void ValidatePhone(string phone)
-{
-    // check phone use regex
-    regex pattern("(\\+84|0)(\\d{9,10})");
-    if (regex_match(phone, pattern))
-    {
-        cout << "Phone is valid" << endl;
-    }
-    else
-    {
-        cout << "Phone is invalid" << endl;
-    }
-}
+
 void quickSort(vector<Customer> &arr, int left, int right)
 {
     int i = left, j = right;

@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include "customer.cpp"
+#include "ConsoleTable.cpp"
 using namespace std;
 vector<Customer> customers;
 void readCustomer(string filePath)
@@ -40,13 +41,17 @@ void readCustomer(string filePath)
 }
 void printCustomer()
 {
-    cout << "ID" << '\t' << "Name" << setw(25) << "Phone" << '\t' << '\t' << '\t' << "Email" << setw(35) << "Bill" << setw(25) << "Currency" << endl;
-    for(int i = 0; i < customers.size(); i++)
-    {
-        cout << customers[i].getID() << '\t' << customers[i].getName() << setw(34-customers[i].getName().length()) << customers[i].getPhone() 
-        << '\t' << '\t' << customers[i].getEmail() << setw(40-customers[i].getEmail().length()) << customers[i].getBill() << setw(25) << customers[i].getCurrency() << endl;
+    ConsoleTable table{ "ID", "Name", "Email", "Phone", "Bill", "Currency"};
+    
+    table.setPadding(2);
+    table.setStyle(0);
 
+    for (size_t i = 0; i < customers.size(); i++)
+    {
+        table.addRow({ customers[i].getID(), customers[i].getName(), customers[i].getEmail(), customers[i].getPhone(), customers[i].getBill(), customers[i].getCurrency() });
     }
+    cout << table;
+
 }
 int main()
 {

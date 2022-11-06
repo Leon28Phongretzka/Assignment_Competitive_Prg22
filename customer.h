@@ -37,10 +37,10 @@ class Customer
 };
 unsigned long long BillStr_to_int(string bill);                                                       // convert account number from string to int
 void ValidateEmail(string email);                                                                     // validate email
-void ValidatePhone(string phone);                                                                     // validate phone
 void quickSort(vector<Customer> &customer, int left, int right);                                       // quick sort   
 void swap(Customer &a, Customer &b);                                                                  // swap
 int partitionAsc(vector<Customer> &customer, int left, int right);                                        // partition
 int partitionDesc(vector<Customer> &customer, int left, int right);                                       // partition
-long long searchCustomer(vector<Customer> &customer, string bill);                                     // search customer by account number                                      
+long long searchCustomer(vector<Customer> &customer, string bill);                                     // search customer by account number     
+void CheckCurrency(string currency);                                                                 // check currency                         
 #endif
