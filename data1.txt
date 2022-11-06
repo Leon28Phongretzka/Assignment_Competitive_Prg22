@@ -1,11 +1,11 @@
-ID           Name                       Mail                    Phone                   Bill
-1            Tran Nam Phong                abc@gmail.com           0331233443              425.000 VND
-2            Do Ngoc Tuan               def@gmail.com           0128472988              933.000 VND
-3            Pham Van Thinh               ghk@twerk.com           0128472988              653.000 VND
-4            Le Huy Binh                     shevchenbe@yahoo.com           0230847024              105.455 VND
-5            Phung Thanh Lich                dophung@twitch.com          0124068506              455     USD
-6            Lam Dinh Heo               bobeo@nimo.com          0454545357             1.337.000 VND
-7            Choupo Goating             motingdelima.com        0147839348              337 EUR
-8            Lucas Hernandez            lucasbayern@gmail.com   0921898444              423 GBP
-9            Kevin De Bruyne            minibruno@outlook.com   0373439929              155 GBP
-10           Julian Nagelsmann          nanghiep@gmail.com      0923848399              233 EUR
+ID          name                       Mail                    Phone                   Bill                            Service                 Feedback        Address
+1            Trannam Phong                abc@gmail.com           0331233443              425.000 VND                  40Mbps                 5*              Myduc, Hanoi
+2            Dongoc Tuan               def@gmail.com           0128472988              933.000 VND                     100Mbps                4*              Bavi, Hanoi
+3            Pham Van Thinh               ghk@twerk.com           0128472988              65.000 VND                    10Mbps                 2*              Chuongmy, Hanoi
+4            Le Huy Binh                     shevchenbe@yahoo.com           0230847024              105.455 VND         10Mbps                 3*              Thanhtri, Hanoi
+5            Phung Thanh Lich                dophung@twitch.com          0124068506              455     USD            200Mbps                4*              Yenlang, Hanoi
+6            Lam Dinh Heo               bobeo@nimo.com          0454545357             1.337.000 VND                    100Mbps                5*              Molao, Hanoi
+7            Choupo Goating             motingdelima.com        0147839348              337 EUR                         150Mbps                5*              Munich, Germany
+8            Lucas Hernandez            lucasbayern@gmail.com   0921898444              423 GBP                         100Mbps                4*              Munich, Germany
+9            Kevin De Bruyne            minibruno@outlook.com   0373439929              155 GBP                         100Mbps                5*              Manchester, England
+10           Juliannagelsmann         nanghiep@gmail.com      0923848399              233 EUR                         100Mbps                5*              Leipzig, Germany
