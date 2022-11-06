@@ -3,4 +3,9 @@ ID           Name                       Mail                    Phone           
 2            Do Ngoc Tuan               def@gmail.com           0128472988              933.000 VND
 3            Pham Van Thinh               ghk@twerk.com           0128472988              653.000 VND
 4            Le Huy Binh                     ker@yahoo.com           0230847024              105.455 VND
-5            Phung Hoang Thanh Lich                ejo@twitch.com          0124068506              455     $
+5            Phung Thanh Lich                ejo@twitch.com          0124068506              455     $
+6            Lam Dinh Heo               bobeo@nimo.com          0454545357             1337.000 VND
+7            Choupo Goating             motingdelima.com        0147839348              337 EURO
+8            Lucas Hernandez            lucasbayern@gmail.com   0921898444              423 GBP
+9            Kevin De Bruyne            minibruno@outlook.com   0373439929              155 GBP
+10           Julian Nagelsmann          nanghiep@gmail.com      0923848399              233 EURO

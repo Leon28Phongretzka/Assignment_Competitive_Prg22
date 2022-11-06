@@ -54,12 +54,72 @@ void Customer::writeCustomer()
         cout << i.first << "\t" << i.second << endl;
     }
 }
+Customer::Customer(string ID, string name, string phone, string email, string acNo, string currency)
+{
+    this->ID = ID;
+    this->name = name;
+    this->phone = phone;
+    this->email = email;
+    this->acNo = acNo;
+    this->currency = currency;
+}
+Customer::~Customer()
+{
+}
+void Customer::setID(string ID)
+{
+    this->ID = ID;
+}
+void Customer::setName(string name)
+{
+    this->name = name;
+}
+void Customer::setPhone(string phone)
+{
+    this->phone = phone;
+}
+void Customer::setEmail(string email)
+{
+    this->email = email;
+}
+void Customer::setAcNo(string acNo)
+{
+    this->acNo = acNo;
+}
+void Customer::setCurrency(string currency)
+{
+    this->currency = currency;
+}
+string Customer::getID()
+{
+    return ID;
+}
+string Customer::getName()
+{
+    return name;
+}
+string Customer::getPhone()
+{
+    return phone;
+}
+string Customer::getEmail()
+{
+    return email;
+}
+string Customer::getAcNo()
+{
+    return acNo;
+}
+string Customer::getCurrency()
+{
+    return currency;
+}
 void Customer::menuCustomer()
 {
     int choice;
     do
     {
-        cout << "1. Add Customer" << '\t' << '\t' << "6. Money from Customer" << endl;
+        cout << "1. Add Customer" << '\t' << '\t' << "6. Check Mail" << endl;
         cout << "2. Update Customer" << '\t' << "7. Money to Customer" << endl;
         cout << "3. Delete Customer" << '\t' << "8. Round Money" << endl;
         cout << "4. Search Customer" << '\t' << "9. Type of Mail" << endl;
@@ -85,10 +145,10 @@ void Customer::menuCustomer()
             displayCustomer();
             break;
         case 6:
-            MoneyFromCus();
+            CheckValidMail(string email);
             break;
         case 7:
-            MoneyToCus();
+            NoName();
             break;
         case 8:
             RoundMoney();
@@ -97,7 +157,7 @@ void Customer::menuCustomer()
             TypeOfMail();
             break;
         case 10:
-            TypeOfCurrency();
+            TypeOfCurrency(string currency);
             break;
         case 0:
             cout << "Exit" << endl;
@@ -110,7 +170,12 @@ void Customer::menuCustomer()
 }
 void Customer::addCustomer()
 {
-    
+    // add customer to file data1.txt
+    ofstream file;
+    file.open("D:\\4.Code\\ASG_CP22\\data1.txt", ios::app);
+    file << "ID\tName\tEmail\tPhone\tAmount\tCurrency" << endl;
+    file << ID << "\t" << name << "\t" << email << "\t" << phone << "\t" << acNo << "\t" << currency << endl;
+    file.close();
 }
 void Customer::updateCustomer()
 {
@@ -128,11 +193,20 @@ void Customer::displayCustomer()
 {
     
 }
-void Customer::MoneyFromCus()
+void Customer::CheckValidMail(string email)
 {
-    
+    // check valid mail use regex
+    regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+    if (regex_match(email, pattern))
+    {
+        cout << "Valid email" << endl;
+    }
+    else
+    {
+        cout << "Invalid email" << endl;
+    }
 }
-void Customer::MoneyToCus()
+void Customer::NoName()
 {
     
 }
@@ -144,8 +218,24 @@ void Customer::TypeOfMail()
 {
     
 }
-void Customer::TypeOfCurrency()
+void Customer::TypeOfCurrency(string currency)
 {
-    
+    // check type of currency in file data1.txt
+    if (currency == "USD")
+    {
+        cout << "Dollar" << endl;
+    }
+    else if (currency == "VND")
+    {
+        cout << "Viet Nam Dong" << endl;
+    }
+    else if (currency == "EURO")
+    {
+        cout << "€" << endl;
+    }
+    else if (currency == "GBP")
+    {
+        cout << " £" << endl;
+    }
 }
 
