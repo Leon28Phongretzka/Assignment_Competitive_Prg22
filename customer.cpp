@@ -6,62 +6,17 @@ Customer::Customer()
     ID = "";
     name = "";
     email = "";
-    acNo = "";
+    bill = "";
     currency = "";
     phone = "";
 }
-void Customer::readCustomer()
-{
-    ifstream file;
-    file.open("D:\\4.Code\\ASG_CP22\\data1.txt");
-    // read infor from file data1.txt
-    string info; 
-    getline(file, info);
-    while(getline(file, info))
-    {
-        stringstream ss;
-        ss << info;
-        size_t index=1;
-        // Split the string into tokens
-        while (ss >> info)
-        {
-            tokens[index++] = info;
-        }
-        long long ID = stoll(tokens[1]);
-        string currency = tokens[index-1];
-        string amount = tokens[index-2];
-        string phone = tokens[index-3];
-        string mail = tokens[index-4];
-        string name = "";
-        for (int i = 2; i < index-4; i++)
-        {
-            name += tokens[i];
-        }
-        // use map data to store data
-        data[ID] = name;
-        // set wide between name and email
-        int wide = 27;
-        int wide2= 15;
-        data[ID] += string(wide - name.length(), ' ');
-        // set wide between email and phone
-        data[ID] = data[ID] + mail + string(wide - mail.length(), ' ') + phone + "\t" + amount + string(wide2 - amount.length(), ' ') + currency;
-    }
-}
-void Customer::writeCustomer()
-{
-    // write infor to file data1.txt
-    for (auto &i : data)
-    {
-        cout << i.first << "\t" << i.second << endl;
-    }
-}
-Customer::Customer(string ID, string name, string phone, string email, string acNo, string currency)
+Customer::Customer(string ID, string name, string email, string phone, string bill, string currency)
 {
     this->ID = ID;
     this->name = name;
     this->phone = phone;
     this->email = email;
-    this->acNo = acNo;
+    this->bill = bill;
     this->currency = currency;
 }
 Customer::~Customer()
@@ -83,9 +38,9 @@ void Customer::setEmail(string email)
 {
     this->email = email;
 }
-void Customer::setAcNo(string acNo)
+void Customer::setBill(string bill)
 {
-    this->acNo = acNo;
+    this->bill = bill;
 }
 void Customer::setCurrency(string currency)
 {
@@ -107,101 +62,64 @@ string Customer::getEmail()
 {
     return email;
 }
-string Customer::getAcNo()
+string Customer::getBill()
 {
-    return acNo;
+    return bill;
 }
 string Customer::getCurrency()
 {
     return currency;
 }
-void Customer::menuCustomer()
+void ValidateEmail(string email)
 {
-    int choice;
-    do
+    // check email use regex
+    regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+    if (regex_match(email, pattern))
     {
-        cout << "1. Add Customer" << '\t' << '\t' << "6. Check Mail" << endl;
-        cout << "2. Update Customer" << '\t' << "7. Money to Customer" << endl;
-        cout << "3. Delete Customer" << '\t' << "8. Round Money" << endl;
-        cout << "4. Search Customer" << '\t' << "9. Type of Mail" << endl;
-        cout << "5. Display Customer" << '\t' << "10. Type of Currency" << endl;
-        cout << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
-        switch (choice)
-        {
-            case 1:
-                addCustomer();
-                break;
-            case 2:
-                updateCustomer();
-                break;
-            case 3:
-                deleteCustomer();
-                break;
-            case 4:
-                searchCustomer();
-                break;
-            case 5:
-                displayCustomer();
-                break;
-            case 6:
-                checkMail();
-                break;
-            case 7:
-                moneyToCustomer();
-                break;
-            case 8:
-                RoundMoney();
-                break;
-            case 9:
-                TypeOfMail();
-                break;
-            case 10:
-                TypeOfCurrency(string currency);
-                break;
-        }
+        cout << "Email is valid" << endl;
     }
-    while (choice != 0);
+    else
+    {
+        cout << "Email is invalid" << endl;
+    }
 }
-void Customer::addCustomer()
+void ValidatePhone(string phone)
 {
-    
+    // check phone use regex
+    regex pattern("(\\+84|0)(\\d{9,10})");
+    if (regex_match(phone, pattern))
+    {
+        cout << "Phone is valid" << endl;
+    }
+    else
+    {
+        cout << "Phone is invalid" << endl;
+    }
 }
-void Customer::updateCustomer()
+void quickSort(vector<Customer> &arr, int left, int right)
 {
-    
-}
-void Customer::deleteCustomer()
-{
-    
-}
-void Customer::searchCustomer()
-{
- 
-}
-void Customer::displayCustomer()
-{
-    // Get ID
-}
-void Customer::checkMail()
-{
-
-}
-void Customer::moneyToCustomer()
-{
-
-}
-void Customer::RoundMoney()
-{
-
-}
-void Customer::TypeOfMail()
-{
-    
-}
-void Customer::TypeOfCurrency()
-{
-    
-
+    int i = left, j = right;
+    Customer tmp;
+    Customer pivot = arr[(left + right) / 2];
+    /* partition */
+    while (i <= j)
+    {
+        while (arr[i].getID() < pivot.getID())
+            i++;
+        while (arr[j].getID() > pivot.getID())
+            j--;
+        if (i <= j)
+        {
+            tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+            i++;
+            j--;
+        }
+    };
+    /* recursion */
+    if (left < j)
+        quickSort(arr, left, j);
+    if (i < right)
+        quickSort(arr, i, right);
 }
