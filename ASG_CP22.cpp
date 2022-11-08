@@ -23,32 +23,24 @@ void readCustomer(string filePath)
         {
             rawData[index++] = word;
         }
-        ID = rawData[1];
-
-        int addressIndex = rawData.size();
+        
         address = "";
-        // address from the feedback to the end of the line
-        for(size_t i = rawData.size(); i > 0 ; i--)
+        while (rawData[index - 1][1] != '*' )
         {
-            if(rawData[i][1] == '*') break;
-            address = rawData[i] + " " + address;
-            addressIndex--;
+            address = rawData[index - 1] + " " + address;
+            index--;
+            if (rawData[index - 1][1] == '*')
+                break;
         }
-
-        feedback = rawData[addressIndex];
-    
-        service = rawData[addressIndex - 1];
-    
-        currency = rawData[addressIndex - 2];
-        
-        bill = rawData[addressIndex - 3];
-        
-        phone = rawData[addressIndex - 4];
-
-        email = rawData[addressIndex - 5];
-        
+        ID = rawData[1];
+        feedback = rawData[index];
+        service = rawData[index - 1];
+        currency = rawData[index - 2];
+        bill = rawData[index - 3];
+        phone = rawData[index - 4];
+        email = rawData[index - 5];
         name = "";
-        for(size_t i = 2; i <= addressIndex - 6; i++)
+        for(size_t i = 2; i <= index - 6; i++)
         {
             name += rawData[i] + " ";
         }
@@ -99,7 +91,7 @@ void ExchangeCurrency()
 int main()
 {
     readCustomer(FILE_PATH);
-    ExchangeCurrency();
+    // ExchangeCurrency();
     printCustomer();
     system("pause");
     return 0;

@@ -50,6 +50,7 @@ void quickSort(vector<Customer> &customer, int left, int right);                
 void swap(Customer &a, Customer &b);                                                                  // swap
 int partitionAsc(vector<Customer> &customer, int left, int right);                                        // partition
 int partitionDesc(vector<Customer> &customer, int left, int right);                                       // partition
-long long searchCustomer(vector<Customer> &customer, string bill);                                     // search customer by account number     
+long long searchCustomer(vector<Customer> &customer, string bill);                                     // search customer by account number
+long long SortBill(vector<Customer> &customer, int left, int right, string bill);                      // sort by account number     
 void ExchangeCurrency();                                                                 // exchange currency                         
 #endif
