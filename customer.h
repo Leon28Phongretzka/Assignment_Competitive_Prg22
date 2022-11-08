@@ -44,13 +44,14 @@ class Customer
         string getFeedback();
         string getAddress();
 };
-unsigned long long BillStr_to_int(string bill);                                                       // convert account number from string to int
-void ValidateEmail(string email);                                                                     // validate email
-void quickSort(vector<Customer> &customer, int left, int right);                                       // quick sort   
-void swap(Customer &a, Customer &b);                                                                  // swap
-int partitionAsc(vector<Customer> &customer, int left, int right);                                        // partition
-int partitionDesc(vector<Customer> &customer, int left, int right);                                       // partition
-long long searchCustomer(vector<Customer> &customer, string bill);                                     // search customer by account number
-long long SortBill(vector<Customer> &customer, int left, int right, string bill);                      // sort by account number     
-void ExchangeCurrency();                                                                 // exchange currency                         
+unsigned long long BillStr_to_int(string bill);                                                       
+void ValidateEmail(string email);                                    
+void AddCustomer(vector<Customer> &customers);                                 
+void quickSort(vector<Customer> &customer, int left, int right);                                         
+void swap(Customer &a, Customer &b);                                                                  
+int partitionAsc(vector<Customer> &customer, int left, int right);                                        
+int partitionDesc(vector<Customer> &customer, int left, int right);                                       
+long long searchCustomer(vector<Customer> &customer, string bill);                                     
+long long SortBill(vector<Customer> &customer, int left, int right, string bill);                         
+void ExchangeCurrency();                                                                                         
 #endif

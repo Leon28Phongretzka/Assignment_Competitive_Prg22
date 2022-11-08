@@ -3,6 +3,7 @@
 #include "ConsoleTable.cpp"
 using namespace std;
 vector<Customer> customers;
+Customer khachhang;
 void readCustomer(string filePath)
 {
     ifstream input(filePath);
