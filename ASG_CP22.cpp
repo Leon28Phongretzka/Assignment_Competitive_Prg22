@@ -91,10 +91,19 @@ void ExchangeCurrency()
 int main()
 {
     readCustomer(FILE_PATH);
-    AddCustomer(customers);
-    // SortAscendingBill(customers);
-    // ExchangeCurrency();
-    printCustomer();
+    // General
+    // AddCustomer(customers);
+    // EditCustomer(customers);
+    // DeleteCustomerByID(customers);
+    
+    ExchangeCurrency();
+    // Sort
+    // SortCustomer(customers, 0, customers.size() - 1, 5, true);
+
+    // Search
+    // SearchCustomer(customers, 2, "Joshua Kimmich");
+
+    // printCustomer();
     system("pause");
     return 0;
 }

@@ -45,18 +45,23 @@ class Customer
         string getFeedback();
         string getAddress();
 };
-void swap(Customer &a, Customer &b);                                                                  
+// General Functions
+void swap(Customer &a, Customer &b);    
+unsigned long long Str_to_int(string str);                                                                
 int partitionAsc(vector<Customer> &customer, int left, int right);                                        
 int partitionDesc(vector<Customer> &customer, int left, int right);
-
 void ValidateEmail(string email);  
-                                 
+// Add, Edit, Delete Data
 void AddCustomer(vector<Customer> &customers);
+void EditCustomer(vector<Customer> &customers);
+void DeleteCustomerByID(vector<Customer> &customers);
+// Sort
+void SortCustomer(vector<Customer> &customers, int left, int right, int opt, bool isAscending);
+                       
+// Search  
+void SearchCustomer(vector<Customer> &customers, int opt, string value);
 
-unsigned long long BillStr_to_int(string bill);   
 
-void SortAscendingBill(vector<Customer> &customers);                                      
-                                 
-long long searchCustomer(vector<Customer> &customer, string bill);                                                             
+
 void ExchangeCurrency();                                                                                         
 #endif
