@@ -3,7 +3,6 @@
 #include "ConsoleTable.cpp"
 using namespace std;
 vector<Customer> customers;
-Customer khachhang;
 void readCustomer(string filePath)
 {
     ifstream input(filePath);
@@ -34,14 +33,14 @@ void readCustomer(string filePath)
                 break;
         }
         ID = rawData[1];
-        feedback = rawData[index];
-        service = rawData[index - 1];
-        currency = rawData[index - 2];
-        bill = rawData[index - 3];
-        phone = rawData[index - 4];
-        email = rawData[index - 5];
+        feedback = rawData[index - 1];
+        service = rawData[index - 2];
+        currency = rawData[index - 3];
+        bill = rawData[index - 4];
+        phone = rawData[index - 5];
+        email = rawData[index - 6];
         name = "";
-        for(size_t i = 2; i <= index - 6; i++)
+        for(size_t i = 2; i < index - 6; i++)
         {
             name += rawData[i] + " ";
         }
@@ -92,6 +91,8 @@ void ExchangeCurrency()
 int main()
 {
     readCustomer(FILE_PATH);
+    AddCustomer(customers);
+    // SortAscendingBill(customers);
     // ExchangeCurrency();
     printCustomer();
     system("pause");

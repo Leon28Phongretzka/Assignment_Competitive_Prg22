@@ -9,6 +9,9 @@ Customer::Customer()
     bill = "";
     currency = "";
     phone = "";
+    service = "";
+    feedback = "";
+    address = "";
 }
 Customer::Customer(string ID, string name, string email, string phone, string bill, string currency, string service, string feedback, string address)
 {
@@ -99,8 +102,72 @@ string Customer::getAddress()
 {
     return address;
 }
+// General
+void swap(Customer &a, Customer &b)
+{
+    Customer temp = a;
+    a = b;
+    b = temp;
+}
+unsigned long long BillStr_to_int(string bill)
+{
+    unsigned long long bill_int = 0;
+    for (int i = 0; i < bill.length(); i++)
+    {
+        bill_int = bill_int * 10 + (bill[i] - '0');
+    }
+    return bill_int;
+}
+int partitionAsc(vector<Customer> &customer, int left, int right)
+{
+    int i = left;
+    int j = right;
+    Customer pivot = customer[(left + right) / 2];
+    while (i <= j)
+    {
+        while (BillStr_to_int(customer[i].getBill()) < BillStr_to_int(pivot.getBill()))
+        {
+            i++;
+        }
+        while (BillStr_to_int(customer[j].getBill()) > BillStr_to_int(pivot.getBill()))
+        {
+            j--;
+        }
+        if (i <= j)
+        {
+            swap(customer[i], customer[j]);
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
+int partitionDesc(vector<Customer> &customer, int left, int right)
+{
+    int i = left;
+    int j = right;
+    Customer pivot = customer[(left + right) / 2];
+    while (i <= j)
+    {
+        while (BillStr_to_int(customer[i].getBill()) > BillStr_to_int(pivot.getBill()))
+        {
+            i++;
+        }
+        while (BillStr_to_int(customer[j].getBill()) < BillStr_to_int(pivot.getBill()))
+        {
+            j--;
+        }
+        if (i <= j)
+        {
+            swap(customer[i], customer[j]);
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
 
-
+// Validate Mail
 void ValidateEmail(string email)
 {
     // check email use regex
@@ -114,36 +181,54 @@ void ValidateEmail(string email)
         cout << "Email is invalid" << endl;
     }
 }
-void quickSort(vector<Customer> &arr, int left, int right)
+
+// add Customer to vector and update file after add
+
+void AddCustomer(vector<Customer> &customers)
 {
-    int i = left, j = right;
-    Customer tmp;
-    Customer pivot = arr[(left + right) / 2];
-    /* partition */
-    while (i <= j)
+    string ID, name, email, phone, bill, currency, service, feedback, address;
+    cout << "Enter ID: ";
+    cin >> ID;
+    // if ID exist, return
+    for (int i = 0; i < customers.size(); i++)
     {
-        while (arr[i].getID() < pivot.getID())
-            i++;
-        while (arr[j].getID() > pivot.getID())
-            j--;
-        if (i <= j)
+        if (customers[i].getID() == ID)
         {
-            tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
-            i++;
-            j--;
+            cout << "ID is exist" << endl;
+            return;
         }
-    };
-    /* recursion */
-    if (left < j)
-        quickSort(arr, left, j);
-    if (i < right)
-        quickSort(arr, i, right);
+    }
+    cout << "Enter name: ";
+    cin.ignore();
+    getline(cin, name);
+    cout << "Enter email: ";
+    cin >> email;
+    cout << "Enter phone: ";
+    cin >> phone;
+    cout << "Enter bill: ";
+    cin >> bill;
+    cout << "Enter currency: ";
+    cin >> currency;
+    cout << "Enter service: ";
+    cin >> service;
+    cout << "Enter feedback: ";
+    cin >> feedback;
+    cout << "Enter address: ";
+    cin.ignore();
+    getline(cin, address);
+    Customer customer(ID, name, email, phone, bill, currency, service, feedback, address);
+    customers.push_back(Customer(ID, name, email, phone, bill, currency, service, feedback, address));
+    // Add new customer to file data1.txt
+    ofstream input(FILE_PATH);
+    // Get the title line
+
+    input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    for (int i = 0; i < customers.size(); i++)
+    {
+        // write data to file and set space between data to 30
+        input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+    }
+    
+    input.close();
 }
-void swap(Customer &a, Customer &b)
-{
-    Customer temp = a;
-    a = b;
-    b = temp;
-}
+
