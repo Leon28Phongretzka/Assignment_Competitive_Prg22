@@ -90,6 +90,7 @@ void ExchangeCurrency()
 }
 void SortMenu(vector<Customer> &customers)
 {
+    readCustomer(FILE_PATH);
     int opt;
     // Sort by ID, Name, Bill, Service, Feedback
     cout << "1. Sort by Ascending ID" << endl;
@@ -102,7 +103,6 @@ void SortMenu(vector<Customer> &customers)
     cout << "8. Sort by Descending Bill" << endl;
     cout << "9. Sort by Descending Service" << endl;
     cout << "10. Sort by Descending Feedback" << endl;
-
     cout << "0. Back to main menu" << endl;
     cout << "Enter your option: ";
     cin >> opt;
@@ -152,7 +152,6 @@ void SortMenu(vector<Customer> &customers)
     }
     input.close();
     // read data from file after update
-    readCustomer(FILE_PATH);
     // print data
     // printCustomer(customers);
 }
@@ -226,6 +225,7 @@ void Menu(vector<Customer> &customers)
         // case 4 is menu sort
         case 4:
             SortMenu(customers);
+            printCustomer();
             break;
         // case 5 is menu search
         case 5:
@@ -241,7 +241,7 @@ void Menu(vector<Customer> &customers)
 }
 int main()
 {
-    // Menu(customers);
+    Menu(customers);
     readCustomer(FILE_PATH);
     // General
     // AddCustomer(customers);
@@ -249,10 +249,10 @@ int main()
     // DeleteCustomerByID(customers);
     ExchangeCurrency();
     // Sort
-    SortCustomer(customers, 0, customers.size() - 1, 5, true);
+    // SortCustomer(customers, 0, customers.size() - 1, 5, true);
     // Search
     // SearchCustomer(customers, "Joshua Kimmich", 2);
-    printCustomer();
+    // printCustomer();
     system("pause");
     return 0;
 }
