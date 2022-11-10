@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include"customer.h"
+// #include "ConsoleTable.cpp"
 using namespace std;
 Customer::Customer()
 {
@@ -386,7 +387,7 @@ void DeleteCustomerByID(vector<Customer> &customers)
         }
     }
 }
-// Sort customer by 3 options: ID, Name, Bill
+// Sort customer by 5 fields: ID, Name, Bill, Service, Feedback. And update file after sort
 void SortCustomer(vector<Customer> &customers, int left, int right, int opt, bool isAscending)
 {
     // use switch
@@ -567,10 +568,22 @@ void SortCustomer(vector<Customer> &customers, int left, int right, int opt, boo
                 SortCustomer(customers, i, right, opt, isAscending);
         }
     }
+    // save the sorted list to file data1.txt
+    ofstream input(FILE_PATH);
+    // Get the title line
+
+    input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    for (int i = 0; i < customers.size(); i++)
+    {
+        // write data to file and set space between data to 30
+        input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+    }
+    input.close();
+    return;
 }
 
 // Search customer by any option
-void SearchCustomer(vector<Customer> &customers, int opt, string value)
+void SearchCustomer(vector<Customer> &customers, string value, int opt)
 {
     for (int i = 0; i < customers.size(); i++)
     {
@@ -609,7 +622,9 @@ void SearchCustomer(vector<Customer> &customers, int opt, string value)
                 break;
         }
     }
+    
 }
+
 
 
 
