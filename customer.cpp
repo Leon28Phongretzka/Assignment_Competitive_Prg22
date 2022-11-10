@@ -386,14 +386,186 @@ void DeleteCustomerByID(vector<Customer> &customers)
         }
     }
 }
-// Sort customer by any option
+// Sort customer by 3 options: ID, Name, Bill
 void SortCustomer(vector<Customer> &customers, int left, int right, int opt, bool isAscending)
 {
-    if(left < right)
+    // use switch
+    switch (opt)
     {
-        int pv = isAscending ? partitionAsc(customers, left, right, opt) : partitionDesc(customers, left, right, opt);
-        SortCustomer(customers, left, pv - 1, opt, isAscending);
-        SortCustomer(customers, pv + 1, right, opt, isAscending);
+    case 1:
+        // sort by ID
+        if (left < right)
+        {
+            int i = left, j = right;
+            Customer pivot = customers[(left + right) / 2];
+            while (i <= j)
+            {
+                if (isAscending)
+                {
+                    while (Str_to_int(customers[i].getID()) < Str_to_int(pivot.getID()))
+                        i++;
+                    while (Str_to_int(customers[j].getID()) > Str_to_int(pivot.getID()))
+                        j--;
+                }
+                else
+                {
+                    while (Str_to_int(customers[i].getID()) > Str_to_int(pivot.getID()))
+                        i++;
+                    while (Str_to_int(customers[j].getID()) < Str_to_int(pivot.getID()))
+                        j--;
+                }
+                if (i <= j)
+                {
+                    swap(customers[i], customers[j]);
+                    i++;
+                    j--;
+                }
+            }
+            if (left < j)
+                SortCustomer(customers, left, j, opt, isAscending);
+            if (i < right)
+                SortCustomer(customers, i, right, opt, isAscending);
+        }
+        break;
+    case 2:
+        // sort by Name
+        if (left < right)
+        {
+            int i = left, j = right;
+            Customer pivot = customers[(left + right) / 2];
+            while (i <= j)
+            {
+                if (isAscending)
+                {
+                    while (customers[i].getName() < pivot.getName())
+                        i++;
+                    while (customers[j].getName() > pivot.getName())
+                        j--;
+                }
+                else
+                {
+                    while (customers[i].getName() > pivot.getName())
+                        i++;
+                    while (customers[j].getName() < pivot.getName())
+                        j--;
+                }
+                if (i <= j)
+                {
+                    swap(customers[i], customers[j]);
+                    i++;
+                    j--;
+                }
+            }
+            if (left < j)
+                SortCustomer(customers, left, j, opt, isAscending);
+            if (i < right)
+                SortCustomer(customers, i, right, opt, isAscending);
+        }
+        break;
+    case 3:
+        // convert bill to number and sort them
+        if (left < right)
+        {
+            int i = left, j = right;
+            Customer pivot = customers[(left + right) / 2];
+            while (i <= j)
+            {
+                if (isAscending)
+                {
+                    while (Str_to_int(customers[i].getBill()) < Str_to_int(pivot.getBill()))
+                        i++;
+                    while (Str_to_int(customers[j].getBill()) > Str_to_int(pivot.getBill()))
+                        j--;
+                }
+                else
+                {
+                    while (Str_to_int(customers[i].getBill()) > Str_to_int(pivot.getBill()))
+                        i++;
+                    while (Str_to_int(customers[j].getBill()) < Str_to_int(pivot.getBill()))
+                        j--;
+                }
+                if (i <= j)
+                {
+                    swap(customers[i], customers[j]);
+                    i++;
+                    j--;
+                }
+            }
+            if (left < j)
+                SortCustomer(customers, left, j, opt, isAscending);
+            if (i < right)
+                SortCustomer(customers, i, right, opt, isAscending);
+        }
+        break;
+    case 4:
+        // convert 3 first character of service to number and sort them
+        if (left < right)
+        {
+            int i = left, j = right;
+            Customer pivot = customers[(left + right) / 2];
+            while (i <= j)
+            {
+                if (isAscending)
+                {
+                    while (Str_to_int(customers[i].getService().substr(0, 3)) < Str_to_int(pivot.getService().substr(0, 3)))
+                        i++;
+                    while (Str_to_int(customers[j].getService().substr(0, 3)) > Str_to_int(pivot.getService().substr(0, 3)))
+                        j--;
+                }
+                else
+                {
+                    while (Str_to_int(customers[i].getService().substr(0, 3)) > Str_to_int(pivot.getService().substr(0, 3)))
+                        i++;
+                    while (Str_to_int(customers[j].getService().substr(0, 3)) < Str_to_int(pivot.getService().substr(0, 3)))
+                        j--;
+                }
+                if (i <= j)
+                {
+                    swap(customers[i], customers[j]);
+                    i++;
+                    j--;
+                }
+            }
+            if (left < j)
+                SortCustomer(customers, left, j, opt, isAscending);
+            if (i < right)
+                SortCustomer(customers, i, right, opt, isAscending);
+        }
+        break;
+    case 5:
+        // convert the first character of feedback and sort them
+        if (left < right)
+        {
+            int i = left, j = right;
+            Customer pivot = customers[(left + right) / 2];
+            while (i <= j)
+            {
+                if (isAscending)
+                {
+                    while (Str_to_int(customers[i].getFeedback().substr(0, 1)) < Str_to_int(pivot.getFeedback().substr(0, 1)))
+                        i++;
+                    while (Str_to_int(customers[j].getFeedback().substr(0, 1)) > Str_to_int(pivot.getFeedback().substr(0, 1)))
+                        j--;
+                }
+                else
+                {
+                    while (Str_to_int(customers[i].getFeedback().substr(0, 1)) > Str_to_int(pivot.getFeedback().substr(0, 1)))
+                        i++;
+                    while (Str_to_int(customers[j].getFeedback().substr(0, 1)) < Str_to_int(pivot.getFeedback().substr(0, 1)))
+                        j--;
+                }
+                if (i <= j)
+                {
+                    swap(customers[i], customers[j]);
+                    i++;
+                    j--;
+                }
+            }
+            if (left < j)
+                SortCustomer(customers, left, j, opt, isAscending);
+            if (i < right)
+                SortCustomer(customers, i, right, opt, isAscending);
+        }
     }
 }
 

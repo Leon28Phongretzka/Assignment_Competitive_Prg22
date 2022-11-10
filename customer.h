@@ -56,12 +56,9 @@ void AddCustomer(vector<Customer> &customers);
 void EditCustomer(vector<Customer> &customers);
 void DeleteCustomerByID(vector<Customer> &customers);
 // Sort
-void SortCustomer(vector<Customer> &customers, int left, int right, int opt, bool isAscending);
-                       
+void SortCustomer(vector<Customer> &customers, int left, int right, int opt, bool isAscending);                
 // Search  
 void SearchCustomer(vector<Customer> &customers, int opt, string value);
-
-
-
+// Additional
 void ExchangeCurrency();                                                                                         
 #endif

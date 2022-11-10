@@ -69,7 +69,7 @@ void ExchangeCurrency()
     {
         if (customers[i].getCurrency() == "USD")
         {
-            continue;
+            customers[i].setBill(to_string(stof(customers[i].getBill()) * 1));
         }
         else if (customers[i].getCurrency() == "VND")
         {
@@ -98,12 +98,12 @@ int main()
     
     ExchangeCurrency();
     // Sort
-    // SortCustomer(customers, 0, customers.size() - 1, 5, true);
+    SortCustomer(customers, 0, customers.size() - 1, 5, true);
 
     // Search
     // SearchCustomer(customers, 2, "Joshua Kimmich");
 
-    // printCustomer();
+    printCustomer();
     system("pause");
     return 0;
 }
