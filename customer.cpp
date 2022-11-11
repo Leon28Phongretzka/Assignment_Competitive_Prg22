@@ -298,11 +298,11 @@ void AddCustomer(vector<Customer> &customers)
     ofstream input(FILE_PATH);
     // Get the title line
 
-    input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
         // write data to file and set space between data to 30
-        input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+        input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
     }
     input.close();
 }
@@ -348,11 +348,11 @@ void EditCustomer(vector<Customer> &customers)
             ofstream input(FILE_PATH);
             // Get the title line
 
-            input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+            input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
             for (int i = 0; i < customers.size(); i++)
             {
                 // write data to file and set space between data to 30
-                input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+                input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
             }
             input.close();
             return;
@@ -376,11 +376,11 @@ void DeleteCustomerByID(vector<Customer> &customers)
             ofstream input(FILE_PATH);
             // Get the title line
 
-            input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+            input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
             for (int i = 0; i < customers.size(); i++)
             {
                 // write data to file and set space between data to 30
-                input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+                input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
             }
             input.close();
             return;
@@ -572,11 +572,11 @@ void SortCustomer(vector<Customer> &customers, int left, int right, int opt, boo
     ofstream input(FILE_PATH);
     // Get the title line
 
-    input << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
         // write data to file and set space between data to 30
-        input << customers[i].getID() << '\t' << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+        input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
     }
     input.close();
     return;
@@ -669,11 +669,11 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
     }
     else
     {
-        cout << "ID" << '\t' << "Name" << setw(20) << "Email" << setw(20) << "Phone" << setw(20) << "Bill" << setw(20) << "Currency" << setw(20) << "Service" << setw(20) << "Feedback" << setw(20) << "Address" << endl;
+        cout << "ID" << setw(30) << "Name" << setw(20) << "Email" << setw(20) << "Phone" << setw(20) << "Bill" << setw(20) << "Currency" << setw(20) << "Service" << setw(20) << "Feedback" << setw(20) << "Address" << endl;
         for (int i = 0; i < result.size(); i++)
         {
             // print out all information of customer
-            cout << result[i].getID() << '\t' << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(15) << result[i].getCurrency() << setw(15) << result[i].getService() << setw(15) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
+            cout << result[i].getID() << setw(30) << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(15) << result[i].getCurrency() << setw(15) << result[i].getService() << setw(15) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
         }
     }
 }
