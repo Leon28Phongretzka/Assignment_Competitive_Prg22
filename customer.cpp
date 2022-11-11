@@ -583,110 +583,98 @@ void SortCustomer(vector<Customer> &customers, int left, int right, int opt, boo
 }
 
 // Search customer by 7 fields: ID, Name, Bill, Phone, Service, Feedback, Email
-// use binary search
-// use switch case to choose the field to search, print the result if found
+// use linear to search and return information of customer
 
 void SearchCustomer(vector<Customer> &customers, string value, int opt)
 {
-    int left = 0, right = customers.size() - 1;
+    // get the information of customer and print it out
+    vector<Customer> result;
     switch (opt)
     {
     case 1:
-        // search by ID and print if found
-        while (left <= right)
+        // search by ID
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getID() == value)
+            if (customers[i].getID() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
-            else if (customers[mid].getID() > value)
-                right = mid - 1;
-            else
-                left = mid + 1;
         }
+        break;
     case 2:
-        // search by name
-        while (left <= right)
+        // search by Name
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getName() == value)
+            if (customers[i].getName() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
         break;
     case 3:
-        // search by bill
-        while (left <= right)
+        // search by Bill
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getBill() == value)
+            if (customers[i].getBill() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
         break;
     case 4:
-        // search by phone
-        while (left <= right)
+        // search by Phone
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getPhone() == value)
+            if (customers[i].getPhone() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
         break;
     case 5:
-        // search by service
-        while (left <= right)
+        // search by Service
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getService() == value)
+            if (customers[i].getService() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
         break;
     case 6:
-        // search by feedback
-        while (left <= right)
+        // search by Feedback
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getFeedback() == value)
+            if (customers[i].getFeedback() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
         break;
     case 7:
-        // search by email
-        while (left <= right)
+        // search by Email
+        for (int i = 0; i < customers.size(); i++)
         {
-            int mid = (left + right) / 2;
-            if (customers[mid].getEmail() == value)
+            if (customers[i].getEmail() == value)
             {
-                cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
-                cout << customers[mid].getID() << '\t' << customers[mid].getName() << setw(30) << customers[mid].getEmail() << setw(30) << customers[mid].getPhone() << setw(30) << customers[mid].getBill() << setw(30) << customers[mid].getCurrency() << setw(30) << customers[mid].getService() << setw(30) << customers[mid].getFeedback() << setw(30) << customers[mid].getAddress() << endl;
-                return;
+                result.push_back(customers[i]);
             }
         }
-    case 0:
-        // exit
-        return;            
+        break;
+    }
+    // print the result
+    if (result.size() == 0)
+    {
+        cout << "No result found" << endl;
+    }
+    else
+    {
+        cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+        for (int i = 0; i < result.size(); i++)
+        {
+            // print out all information of customer
+            cout << result[i].getID() << '\t' << result[i].getName() << setw(30) << result[i].getEmail() << setw(30) << result[i].getPhone() << setw(30) << result[i].getBill() << setw(30) << result[i].getCurrency() << setw(30) << result[i].getService() << setw(30) << result[i].getFeedback() << setw(30) << result[i].getAddress() << endl;
+        }
     }
 }
 

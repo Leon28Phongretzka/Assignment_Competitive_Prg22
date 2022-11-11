@@ -180,10 +180,12 @@ void SearchMenu(vector<Customer> &customers)
             cout << "Enter ID: ";
             cin >> keyword;
             SearchCustomer(customers, keyword, 1);
+            
             break;
         case 2:
             cout << "Enter Name: ";
-            cin >> keyword;
+            cin.ignore();
+            getline(cin, keyword);
             SearchCustomer(customers, keyword, 2);
             break;
         case 3:
@@ -258,7 +260,7 @@ void Menu(vector<Customer> &customers)
 }
 int main()
 {
-    // Menu(customers);
+    Menu(customers);
     readCustomer(FILE_PATH);
     // General
     // AddCustomer(customers);
@@ -268,7 +270,7 @@ int main()
     // Sort
     // SortCustomer(customers, 0, customers.size() - 1, 5, true);
     // Search
-    // SearchCustomer(customers, value, 2);
+    // SearchCustomer(customers, "Leon Goretzka", 2);
     // printCustomer();
     system("pause");
     return 0;
