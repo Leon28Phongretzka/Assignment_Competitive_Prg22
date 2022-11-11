@@ -669,11 +669,11 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
     }
     else
     {
-        cout << "ID" << '\t' << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+        cout << "ID" << '\t' << "Name" << setw(20) << "Email" << setw(20) << "Phone" << setw(20) << "Bill" << setw(20) << "Currency" << setw(20) << "Service" << setw(20) << "Feedback" << setw(20) << "Address" << endl;
         for (int i = 0; i < result.size(); i++)
         {
             // print out all information of customer
-            cout << result[i].getID() << '\t' << result[i].getName() << setw(30) << result[i].getEmail() << setw(30) << result[i].getPhone() << setw(30) << result[i].getBill() << setw(30) << result[i].getCurrency() << setw(30) << result[i].getService() << setw(30) << result[i].getFeedback() << setw(30) << result[i].getAddress() << endl;
+            cout << result[i].getID() << '\t' << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(15) << result[i].getCurrency() << setw(15) << result[i].getService() << setw(15) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
         }
     }
 }

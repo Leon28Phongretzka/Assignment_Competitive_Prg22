@@ -60,6 +60,5 @@ void SortCustomer(vector<Customer> &customers, int left, int right, int opt, boo
 // Search  
 void SearchCustomer(vector<Customer> &customers,  string value, int opt);
 // Additional
-void ExchangeCurrency();
-                                                                                  
+void ExchangeCurrency();                                                                 
 #endif
