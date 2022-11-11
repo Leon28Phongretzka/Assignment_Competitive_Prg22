@@ -677,10 +677,3 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
         }
     }
 }
-
-
-
-
-
-
-
