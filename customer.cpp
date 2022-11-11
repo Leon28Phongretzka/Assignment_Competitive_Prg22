@@ -248,7 +248,13 @@ int partitionDesc(vector<Customer> &customer, int left, int right, int opt)
 void ValidateEmail(string email)
 {
     // check email use regex
-    regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+    regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");   // regex pattern for email validation
+    // w+ : one or more word character
+    // (\\.|_)? : zero or one occurrence of . or _
+    // (\\w*) : zero or more word character
+    // @ : need @ after username
+    // (\\w+) : one or more word character
+    // (\\.(\\w+))+ : one or more occurrence of . and one or more word character
     if (regex_match(email, pattern))
     {
         cout << "Email is valid" << endl;
@@ -591,8 +597,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
     vector<Customer> result;
     switch (opt)
     {
-    case 1:
-        // search by ID
+    case 1: // search by ID
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getID() == value)
@@ -601,8 +606,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 2:
-        // search by Name
+    case 2: // search by Name
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getName() == value)
@@ -611,8 +615,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 3:
-        // search by Bill
+    case 3: // search by Bill
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getBill() == value)
@@ -621,8 +624,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 4:
-        // search by Phone
+    case 4: // search by Phone
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getPhone() == value)
@@ -631,8 +633,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 5:
-        // search by Service
+    case 5: // search by Service
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getService() == value)
@@ -641,8 +642,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 6:
-        // search by Feedback
+    case 6: // search by Feedback
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getFeedback() == value)
@@ -651,8 +651,7 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             }
         }
         break;
-    case 7:
-        // search by Email
+    case 7: // search by Email
         for (int i = 0; i < customers.size(); i++)
         {
             if (customers[i].getEmail() == value)
