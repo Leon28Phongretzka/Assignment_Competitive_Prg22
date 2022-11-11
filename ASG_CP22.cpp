@@ -106,7 +106,7 @@ void SortMenu(vector<Customer> &customers)
     cout << "0. Back to main menu" << endl;
     cout << "Enter your option: ";
     cin >> opt;
-    switch (opt)
+    switch(opt)
     {
         case 1:
             SortCustomer(customers, 0, customers.size() - 1, 1, true);
@@ -141,6 +141,7 @@ void SortMenu(vector<Customer> &customers)
         case 0:
             return;
     }
+    cout << endl;
     cout << "Sort successfully!" << endl;
     // update file
     ofstream input(FILE_PATH);
@@ -157,42 +158,58 @@ void SortMenu(vector<Customer> &customers)
 }
 void SearchMenu(vector<Customer> &customers)
 {
+    // Search Customer by ID, Name, Bill, Phone, Service, Feedback, Email
+    // Print if found
+    // Print not found if not found
+    readCustomer(FILE_PATH);
     int opt;
-    string value;
+    string keyword;
     cout << "1. Search by ID" << endl;
     cout << "2. Search by Name" << endl;
-    cout << "3. Search by Email" << endl;
+    cout << "3. Search by Bill" << endl;
     cout << "4. Search by Phone" << endl;
-    cout << "5. Search by Bill" << endl;
+    cout << "5. Search by Service" << endl;
+    cout << "6. Search by Feedback" << endl;
+    cout << "7. Search by Email" << endl;
     cout << "0. Back to main menu" << endl;
     cout << "Enter your option: ";
     cin >> opt;
-    switch (opt)
+    switch(opt)
     {
         case 1:
             cout << "Enter ID: ";
-            cin >> value;
-            SearchCustomer(customers, value, 1);
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 1);
             break;
         case 2:
             cout << "Enter Name: ";
-            cin >> value;
-            SearchCustomer(customers, value, 2);
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 2);
             break;
         case 3:
-            cout << "Enter Email: ";
-            cin >> value;
-            SearchCustomer(customers, value, 3);
+            cout << "Enter Bill: ";
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 3);
             break;
         case 4:
             cout << "Enter Phone: ";
-            cin >> value;
-            SearchCustomer(customers, value, 4);
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 4);
             break;
         case 5:
-            cout << "Enter Bill: ";
-            cin >> value;
-            SearchCustomer(customers, value, 5);
+            cout << "Enter Service: ";
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 5);
+            break;
+        case 6:
+            cout << "Enter Feedback: ";
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 6);
+            break;
+        case 7:
+            cout << "Enter Email: ";
+            cin >> keyword;
+            SearchCustomer(customers, keyword, 7);
             break;
         case 0:
             return;
@@ -202,7 +219,7 @@ void Menu(vector<Customer> &customers)
 {
     // create table to choose option
     int opt;
-    cout << "---- SRC by Tran Nam Phong ----" << endl;
+    cout << "---- SRC by Tran Nam Phong - B20DCVT288 ----" << endl;
     cout << "1. Add new customer" << endl;
     cout << "2. Edit customer" << endl;
     cout << "3. Delete customer" << endl;
@@ -241,7 +258,7 @@ void Menu(vector<Customer> &customers)
 }
 int main()
 {
-    Menu(customers);
+    // Menu(customers);
     readCustomer(FILE_PATH);
     // General
     // AddCustomer(customers);
@@ -251,7 +268,7 @@ int main()
     // Sort
     // SortCustomer(customers, 0, customers.size() - 1, 5, true);
     // Search
-    // SearchCustomer(customers, "Joshua Kimmich", 2);
+    // SearchCustomer(customers, value, 2);
     // printCustomer();
     system("pause");
     return 0;
