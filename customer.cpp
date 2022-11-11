@@ -572,11 +572,11 @@ void SortCustomer(vector<Customer> &customers, int left, int right, int opt, boo
     ofstream input(FILE_PATH);
     // Get the title line
 
-    input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    input << left << setw(10) << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
         // write data to file and set space between data to 30
-        input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+        input << left << setw(10) << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
     }
     input.close();
     return;
