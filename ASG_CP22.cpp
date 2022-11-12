@@ -64,7 +64,7 @@ void printCustomer()
 }
 void ExchangeCurrency()
 {
-    // exchange all bill to USD with rate
+    // exchange all bill to USD with rate, setprecision(3) to show 3 decimal places
     for (size_t i = 0; i < customers.size(); i++)
     {
         if (customers[i].getCurrency() == "USD")
@@ -73,7 +73,15 @@ void ExchangeCurrency()
         }
         else if (customers[i].getCurrency() == "VND")
         {
-            customers[i].setBill(to_string(stof(customers[i].getBill()) / 23.000));
+            // if the bill has more than 6 digits, it will be multiply by 1000 to get the correct value
+            if (customers[i].getBill().length() > 7)
+            {
+                customers[i].setBill(to_string(stof(customers[i].getBill()) * 1000 / 23.000));
+            }
+            else
+            {
+                customers[i].setBill(to_string(stof(customers[i].getBill()) / 23.000));
+            }
             customers[i].setCurrency("USD");
         }
         else if (customers[i].getCurrency() == "EUR")
@@ -86,6 +94,11 @@ void ExchangeCurrency()
             customers[i].setBill(to_string(stof(customers[i].getBill()) * 1.31));
             customers[i].setCurrency("USD");
         } 
+        else if (customers[i].getCurrency() == "RUB")
+        {
+            customers[i].setBill(to_string(stof(customers[i].getBill()) * 0.014));
+            customers[i].setCurrency("USD");
+        }
     }
 }
 void SortMenu(vector<Customer> &customers)
@@ -115,6 +128,7 @@ void SortMenu(vector<Customer> &customers)
             SortCustomer(customers, 0, customers.size() - 1, 2, true);
             break;
         case 3:
+            ExchangeCurrency();
             SortCustomer(customers, 0, customers.size() - 1, 3, true);
             break;
         case 4:
@@ -130,6 +144,7 @@ void SortMenu(vector<Customer> &customers)
             SortCustomer(customers, 0, customers.size() - 1, 2, false);
             break;
         case 8:
+            ExchangeCurrency();
             SortCustomer(customers, 0, customers.size() - 1, 3, false);
             break;
         case 9:
@@ -266,7 +281,7 @@ int main()
     // AddCustomer(customers);
     // EditCustomer(customers);
     // DeleteCustomerByID(customers);
-    ExchangeCurrency();
+    // ExchangeCurrency();
     // Sort
     // SortCustomer(customers, 0, customers.size() - 1, 5, true);
     // Search
