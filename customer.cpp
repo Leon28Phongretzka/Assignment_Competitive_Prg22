@@ -664,12 +664,22 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
     }
     else
     {
-        cout << left << setw(10) << "ID" << setw(20) << "Name" << setw(20) << "Email" << setw(20) << "Phone" << setw(20) << "Bill" << setw(20) << "Currency" << setw(20) << "Service" << setw(20) << "Feedback" << setw(20) << "Address" << endl;
+        // cout << left << setw(10) << "ID" << setw(20) << "Name" << setw(20) << "Email" << setw(20) << "Phone" << setw(20) << "Bill" << setw(20) << "Currency" << setw(20) << "Service" << setw(20) << "Feedback" << setw(20) << "Address" << endl;
+        // for (int i = 0; i < result.size(); i++)
+        // {
+        //     // print out all information of customer
+        //     cout << left << setw(10) << result[i].getID() << setw(20) << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(20) << result[i].getCurrency() << setw(20) << result[i].getService() << setw(20) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
+        // }
+        ConsoleTable table{"ID", "Name", "Email", "Phone", "Bill", "Currency", "Service", "Feedback", "Address"};
+        table.setPadding(2);
+        table.setStyle(0);
         for (int i = 0; i < result.size(); i++)
         {
-            // print out all information of customer
-            cout << left << setw(10) << result[i].getID() << setw(20) << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(20) << result[i].getCurrency() << setw(20) << result[i].getService() << setw(20) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
+            table += {result[i].getID(), result[i].getName(), result[i].getEmail(), result[i].getPhone(), result[i].getBill(), result[i].getCurrency(), result[i].getService(), result[i].getFeedback(), result[i].getAddress()};
         }
+        cout << table << endl;
+        // return;
     }
-    // print the result 
+    // In kết quả vào bảng ở thư viện ConsoleTable
+
 }
