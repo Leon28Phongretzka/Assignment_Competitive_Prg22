@@ -1,6 +1,6 @@
-#include<bits/stdc++.h>
-#include"customer.h"
-// #include "ConsoleTable.cpp"
+#include <bits/stdc++.h>
+#include "customer.h"
+#include "ConsoleTable.cpp"
 using namespace std;
 Customer::Customer()
 {
@@ -303,7 +303,6 @@ void AddCustomer(vector<Customer> &customers)
     // Add new customer to file data1.txt
     ofstream input(FILE_PATH);
     // Get the title line
-
     input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
@@ -353,7 +352,6 @@ void EditCustomer(vector<Customer> &customers)
             // Edit customer to file data1.txt
             ofstream input(FILE_PATH);
             // Get the title line
-
             input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
             for (int i = 0; i < customers.size(); i++)
             {
@@ -381,7 +379,6 @@ void DeleteCustomerByID(vector<Customer> &customers)
             // Delete customer to file data1.txt
             ofstream input(FILE_PATH);
             // Get the title line
-
             input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
             for (int i = 0; i < customers.size(); i++)
             {
@@ -661,7 +658,6 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
         }
         break;
     }
-    // print the result
     if (result.size() == 0)
     {
         cout << "No result found" << endl;
@@ -675,4 +671,5 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
             cout << left << setw(10) << result[i].getID() << setw(20) << result[i].getName() << setw(20) << result[i].getEmail() << setw(20) << result[i].getPhone() << setw(20) << result[i].getBill() << setw(20) << result[i].getCurrency() << setw(20) << result[i].getService() << setw(20) << result[i].getFeedback() << setw(20) << result[i].getAddress() << endl;
         }
     }
+    // print the result 
 }
