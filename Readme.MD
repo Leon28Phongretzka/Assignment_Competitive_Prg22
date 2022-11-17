@@ -25,7 +25,7 @@ Một project dùng để thực hiện các thao tác quản lý File Khách h�
 >  And, I have to build sort and search function and linked it to data1.txt to perform it
 >  Use pretty table to table it
 ## **Giúp đỡ**
-[![Contact](https://img.shields.io/badge/Contact-Telegram-blue)](https://t.me/MHZidane)
+[![Contact](https://img.shields.io/badge/Contact-Twitter-blue)](https://twitter.com/z_bayern_gzkt)
 > Mọi thắc mắc, góp ý về project vui lòng liên hệ qua Telegam bằng cách click chuột vào biểu tượng trên.
-## **Developed by [Nguyễn Di Đan](https://dannguyenmessi1705.github.io/lovefootball/). Thank you for downloading**
+## **Developed by [Trần Nam Phong](https://github.com/Leon28Phongretzka). Thank you for downloading**
 ![](https://thaitrien.com/wp-content/uploads/2021/06/QATAR-2022-WORLCUP-LOGO.jpg)
