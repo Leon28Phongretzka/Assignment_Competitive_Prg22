@@ -62,6 +62,7 @@ void printCustomer()
     cout << table;
 
 }
+
 void ExchangeCurrency()
 {
     // exchange all bill to USD with rate, setprecision(3) to show 3 decimal places
@@ -103,7 +104,7 @@ void ExchangeCurrency()
 }
 void SortMenu(vector<Customer> &customers)
 {
-    readCustomer(FILE_PATH);
+    // readCustomer(FILE_PATH);
     int opt;
     // Sort by ID, Name, Bill, Service, Feedback
     cout << "1. Sort by Ascending ID" << endl;
@@ -176,7 +177,7 @@ void SearchMenu(vector<Customer> &customers)
     // Search Customer by ID, Name, Bill, Phone, Service, Feedback, Email
     // Print if found
     // Print not found if not found
-    readCustomer(FILE_PATH);
+    // readCustomer(FILE_PATH);
     int opt;
     string keyword;
     cout << "1. Search by ID" << endl;
@@ -272,11 +273,12 @@ void Menu(vector<Customer> &customers)
             cout << "Invalid option" << endl;
             break;
     }
+    Menu(customers);
 }
 int main()
 {
-    Menu(customers);
     readCustomer(FILE_PATH);
+    Menu(customers);
     // General
     // AddCustomer(customers);
     // EditCustomer(customers);

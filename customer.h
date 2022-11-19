@@ -44,6 +44,7 @@ class Customer
         string getService();                                                                                                                            // get service
         string getFeedback();                                                                                                                           // get feedback
         string getAddress();
+        friend ostream& operator<<(ostream& out, Customer& customer);                                                                                 // operator << for writing to file
 };
 // General Functions
 void swap(Customer &a, Customer &b);                                                                                                                    // swap 2 customers    

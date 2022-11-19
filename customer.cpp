@@ -268,6 +268,7 @@ void ValidateEmail(string email)
 // add Customer to vector and update file after add
 void AddCustomer(vector<Customer> &customers)
 {
+    cout << customers.size() << endl;
     string ID, name, email, phone, bill, currency, service, feedback, address;
     cout << "Enter ID: ";
     cin >> ID;
@@ -298,11 +299,13 @@ void AddCustomer(vector<Customer> &customers)
     cout << "Enter address: ";
     cin.ignore();
     getline(cin, address);
-    Customer customer(ID, name, email, phone, bill, currency, service, feedback, address);
+    // Customer customer(ID, name, email, phone, bill, currency, service, feedback, address);
     customers.push_back(Customer(ID, name, email, phone, bill, currency, service, feedback, address));
     // Add new customer to file data1.txt
+    // cout << customers.size() << endl;
     ofstream input(FILE_PATH);
     // Get the title line
+    cout << customers.size() << endl;
     input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
@@ -310,6 +313,7 @@ void AddCustomer(vector<Customer> &customers)
         input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
     }
     input.close();
+    cout << customers[customers.size()-1] << endl;
 }
 
 // Edit customer to vector and update file after edit
@@ -681,5 +685,13 @@ void SearchCustomer(vector<Customer> &customers, string value, int opt)
         // return;
     }
     // In kết quả vào bảng ở thư viện ConsoleTable
-
+}
+ostream& operator<<(ostream& ofs, Customer& customers)
+{
+    ConsoleTable table{"ID", "Name", "Email", "Phone", "Bill", "Currency", "Service", "Feedback", "Address"};
+    table.setPadding(2);
+    table.setStyle(0);
+    table+= {customers.getID(), customers.getName(), customers.getEmail(), customers.getPhone(), customers.getBill(), customers.getCurrency(), customers.getService(), customers.getFeedback(), customers.getAddress()};
+    ofs << table;
+    return ofs;
 }
