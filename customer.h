@@ -44,14 +44,18 @@ class Customer
         string getService();                                                                                                                            // get service
         string getFeedback();                                                                                                                           // get feedback
         string getAddress();
-        friend ostream& operator<<(ostream& out, Customer& customer);                                                                                 // operator << for writing to file
+        friend ostream& operator<<(ostream& out, Customer& customer);                                                                                   // operator << for writing to file
 };
 // General Functions
 void swap(Customer &a, Customer &b);                                                                                                                    // swap 2 customers    
 unsigned long long Str_to_int(string str);                                                                                                              // convert string to int                                                                
-int partitionAsc(vector<Customer> &customer, int left, int right);                                                                                      // partition for quick sort ascending
-int partitionDesc(vector<Customer> &customer, int left, int right);                                                                                     // partition for quick sort descending 
-void ValidateEmail(string email);                                                                                                                       // validate email
+int partitionAsc(vector<Customer> &customer, int left, int right, int opt);                                                                             // partition for quick sort ascending
+int partitionDesc(vector<Customer> &customer, int left, int right, int opt);                                                                            // partition for quick sort descending 
+
+void ValidateID(string ID);                                                                                                                            // validate ID
+void ValidatePhone(string phone);                                                                                                                      // validate phone
+void ValidateEmail(string email);                                                                                                                      // validate email
+void ValidateCurrency(string currency);                                                                                                                // validate currency
 // Add, Edit, Delete Data
 void AddCustomer(vector<Customer> &customers);                                                                                                          // add customer
 void EditCustomer(vector<Customer> &customers);                                                                                                         // edit customer

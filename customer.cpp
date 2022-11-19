@@ -264,11 +264,63 @@ void ValidateEmail(string email)
         cout << "Email is invalid" << endl;
     }
 }
+// Validate ID
+void ValidateID(string ID)
+{
+    // check ID use regex
+    regex pattern("([0-9]{4})");   // regex pattern for ID validation
+    // KH : KH
+    // [0-9]{4} : 4 number
+    if (regex_match(ID, pattern))
+    {
+        cout << "ID is valid" << endl;
+    }
+    else
+    {
+        cout << "ID is invalid" << endl;
+    }
+}
+
+// Validate Phone
+void ValidatePhone(string phone)
+{
+    // check phone use regex
+    regex pattern("(\\+84|0)(\\d{9,10})");   // regex pattern for phone validation
+    // (\\+84|0) : +84 or 0
+    // (\\d{9,10}) : 9 or 10 digit
+    if (regex_match(phone, pattern))
+    {
+        cout << "Phone is valid" << endl;
+    }
+    else
+    {
+        cout << "Phone is invalid" << endl;
+    }
+}
+
+// Validate Currency
+void ValidateCurrency(string currency)
+{
+    // check currency use regex
+    regex pattern("(\\d+)(\\.|,)?(\\d*)");   // regex pattern for currency validation
+    // (\\d+) : one or more digit
+    // (\\.|,)? : zero or one occurrence of . or ,
+    // (\\d*) : zero or more digit
+    if (regex_match(currency, pattern))
+    {
+        cout << "Currency is valid" << endl;
+    }
+    else
+    {
+        cout << "Currency is invalid" << endl;
+    }
+}
+
 
 // add Customer to vector and update file after add
 void AddCustomer(vector<Customer> &customers)
 {
-    cout << customers.size() << endl;
+    // cout << customers.size() << endl;
     string ID, name, email, phone, bill, currency, service, feedback, address;
     cout << "Enter ID: ";
     cin >> ID;
@@ -286,6 +338,7 @@ void AddCustomer(vector<Customer> &customers)
     getline(cin, name);
     cout << "Enter email: ";
     cin >> email;
+    // ValidateEmail(email);
     cout << "Enter phone: ";
     cin >> phone;
     cout << "Enter bill: ";
