@@ -1,5 +1,5 @@
 <p
-     <a href="https://www.facebook.com/pg.8.rzk/"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0&width=300&lines=THE+PROJECT+IS+CREATED+BY+TRẦN+NAM+PHONG" alt="Typing SVG" />
+     <a href="https://www.facebook.com/pg.8.rzk/"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0&width=600&lines=THE+PROJECT+IS+CREATED+BY+TRẦN+NAM+PHONG" alt="Typing SVG" />
      </a>
  </p>
 
