@@ -307,7 +307,7 @@ void AddCustomer(vector<Customer> &customers)
     cout << "Enter ID: ";
     cin >> ID;
     // if ID is not valid, ask user to enter again
-    if(ValidateID(ID) == false)
+    while(ValidateID(ID) == false)
     {
         cout << "Try to enter again: ";
         cin >> ID;
@@ -334,7 +334,7 @@ void AddCustomer(vector<Customer> &customers)
         cout << "1. USD" << '\t';
         cout << "2. VND" << '\t';
         cout << "3. EUR" << '\t';
-        cout << "4. GBP" << '\t';
+        cout << "4. GBP" << endl;
         int choose_crc;
         cin >> choose_crc;
         switch (choose_crc)
@@ -362,7 +362,7 @@ void AddCustomer(vector<Customer> &customers)
     cout << "2. 4*" << '\t';
     cout << "3. 3*" << '\t';
     cout << "4. 2*" << '\t';
-    cout << "5. 1*" << '\t';
+    cout << "5. 1*" << endl;
     int choose_fb;
     cin >> choose_fb;
     switch (choose_fb)
@@ -410,7 +410,7 @@ void EditCustomer(vector<Customer> &customers)
     cout << "Enter ID: ";
     cin >> ID;
     // if ID is not valid, ask user to enter again
-    if(ValidateID(ID) == false)
+    while(ValidateID(ID) == false)
     {
         cout << "Try to enter again: ";
         cin >> ID;
@@ -432,7 +432,7 @@ void EditCustomer(vector<Customer> &customers)
             cout << "1. USD" << '\t';
             cout << "2. VND" << '\t';
             cout << "3. EUR" << '\t';
-            cout << "4. GBP" << '\t';
+            cout << "4. GBP" << endl;
             int choose_crc;
             cin >> choose_crc;
             switch (choose_crc)
@@ -460,7 +460,7 @@ void EditCustomer(vector<Customer> &customers)
             cout << "2. 4*" << '\t';
             cout << "3. 3*" << '\t';
             cout << "4. 2*" << '\t';
-            cout << "5. 1*" << '\t';
+            cout << "5. 1*" << endl;
             int choose_feedback;
             cin >> choose_feedback;
             switch (choose_feedback)
@@ -515,6 +515,11 @@ void DeleteCustomerByID(vector<Customer> &customers)
     string ID;
     cout << "Enter ID: ";
     cin >> ID;
+    while(ValidateID(ID) == false)
+    {
+        cout << "Try to enter again: ";
+        cin >> ID;
+    }
     // if ID not exist, return
     for (int i = 0; i < customers.size(); i++)
     {
