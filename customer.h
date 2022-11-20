@@ -4,7 +4,6 @@
 #include<fstream>
 #include<string>
 #include<vector>
-
 using namespace std;
 
 #define FILE_PATH "D:\\4.Code\\ASG_CP22\\data1.txt"
@@ -51,7 +50,6 @@ void swap(Customer &a, Customer &b);                                            
 unsigned long long Str_to_int(string str);                                                                                                              // convert string to int                                                                
 int partitionAsc(vector<Customer> &customer, int left, int right, int opt);                                                                             // partition for quick sort ascending
 int partitionDesc(vector<Customer> &customer, int left, int right, int opt);                                                                            // partition for quick sort descending 
-
 bool ValidateID(string ID);                                                                                                                            // validate ID
 bool ValidatePhone(string phone);                                                                                                                      // validate phone
 bool ValidateEmail(string email);                                                                                                                      // validate email
