@@ -10,8 +10,6 @@ Directory d:\\4.Code\\ASG_CP22
 
 Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
 
-[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
-
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
@@ -26,8 +24,6 @@ Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
 | [ASG_CP22/data_original.txt](/ASG_CP22/data_original.txt) | C | 15 | 0 | 1 | 16 |
 | [ASG_CP22/menu.hpp](/ASG_CP22/menu.hpp) | C++ | 28 | 0 | 3 | 31 |
 | [ASG_CP22/output.txt](/ASG_CP22/output.txt) | C | 0 | 0 | 1 | 1 |
-
-[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
 # **ASSIGNMENT COMPETITVE PROGRAM 2022**
 
