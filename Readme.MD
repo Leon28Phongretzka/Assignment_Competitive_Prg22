@@ -2,6 +2,32 @@
      <a href="https://www.facebook.com/pg.8.rzk/"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0&width=600&lines=THE+PROJECT+IS+CREATED+BY+TRẦN+NAM+PHONG" alt="Typing SVG" />
      </a>
  </p>
+# Details
+
+Date : 2022-11-20 10:48:09
+
+Directory d:\\4.Code\\ASG_CP22
+
+Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [ASG_CP22/ASG_CP22.cpp](/ASG_CP22/ASG_CP22.cpp) | C++ | 263 | 27 | 5 | 295 |
+| [ASG_CP22/ConsoleTable.cpp](/ASG_CP22/ConsoleTable.cpp) | C++ | 127 | 0 | 35 | 162 |
+| [ASG_CP22/ConsoleTable.h](/ASG_CP22/ConsoleTable.h) | C++ | 52 | 62 | 59 | 173 |
+| [ASG_CP22/SS.cpp](/ASG_CP22/SS.cpp) | C++ | 8 | 0 | 1 | 9 |
+| [ASG_CP22/addmorecus.txt](/ASG_CP22/addmorecus.txt) | C | 0 | 0 | 1 | 1 |
+| [ASG_CP22/customer.cpp](/ASG_CP22/customer.cpp) | C++ | 764 | 68 | 11 | 843 |
+| [ASG_CP22/customer.h](/ASG_CP22/customer.h) | C++ | 59 | 5 | 3 | 67 |
+| [ASG_CP22/data1.txt](/ASG_CP22/data1.txt) | C | 19 | 0 | 1 | 20 |
+| [ASG_CP22/data_original.txt](/ASG_CP22/data_original.txt) | C | 15 | 0 | 1 | 16 |
+| [ASG_CP22/menu.hpp](/ASG_CP22/menu.hpp) | C++ | 28 | 0 | 3 | 31 |
+| [ASG_CP22/output.txt](/ASG_CP22/output.txt) | C | 0 | 0 | 1 | 1 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
 
 # **ASSIGNMENT COMPETITVE PROGRAM 2022**
 
