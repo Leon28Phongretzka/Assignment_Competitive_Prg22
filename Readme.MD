@@ -32,14 +32,14 @@ Total : 10 files,  1353 codes, 162 comments, 137 blanks, all 1652 lines
 #### Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| [ASG_CP22/ASG_CP22.cpp]([/ASG_CP22/ASG_CP22.cpp](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/ASG_CP22.cpp)) | C++ | 263 | 27 | 5 | 295 |
-| [ASG_CP22/ConsoleTable.cpp](/ASG_CP22/ConsoleTable.cpp) | C++ | 127 | 0 | 35 | 162 |
-| [ASG_CP22/ConsoleTable.h](/ASG_CP22/ConsoleTable.h) | C++ | 52 | 62 | 59 | 173 |
-| [ASG_CP22/Readme.md](/ASG_CP22/Readme.md) | Markdown | 22 | 0 | 8 | 30 |
-| [ASG_CP22/customer.cpp](/ASG_CP22/customer.cpp) | C++ | 764 | 68 | 11 | 843 |
-| [ASG_CP22/customer.h](/ASG_CP22/customer.h) | C++ | 59 | 5 | 3 | 67 |
-| [ASG_CP22/data1.txt](/ASG_CP22/data1.txt) | C | 18 | 0 | 1 | 19 |
-| [ASG_CP22/data_original.txt](/ASG_CP22/data_original.txt) | C | 15 | 0 | 1 | 16 |
+| [ASG_CP22/ASG_CP22.cpp](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/ASG_CP22.cpp) | C++ | 263 | 27 | 5 | 295 |
+| [ASG_CP22/ConsoleTable.cpp](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/ConsoleTable.cpp) | C++ | 127 | 0 | 35 | 162 |
+| [ASG_CP22/ConsoleTable.h](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/ConsoleTable.h) | C++ | 52 | 62 | 59 | 173 |
+| [ASG_CP22/Readme.md](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/Readme.MD) | Markdown | 22 | 0 | 8 | 30 |
+| [ASG_CP22/customer.cpp](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/customer.cpp) | C++ | 764 | 68 | 11 | 843 |
+| [ASG_CP22/customer.h](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/customer.h) | C++ | 59 | 5 | 3 | 67 |
+| [ASG_CP22/data1.txt](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/data1.txt) | C | 18 | 0 | 1 | 19 |
+| [ASG_CP22/data_original.txt](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/data_original.txt) | C | 15 | 0 | 1 | 16 |
 
 
 ## 🧠 **QUẢN LÝ FILE KHÁCH HÀNG C++**
