@@ -2,15 +2,26 @@
      <a href="https://www.facebook.com/pg.8.rzk/"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0&width=600&lines=THE+PROJECT+IS+CREATED+BY+TRẦN+NAM+PHONG" alt="Typing SVG" />
      </a>
  </p>
-# Details
+# **ASSIGNMENT COMPETITVE PROGRAM 2022**
 
-Date : 2022-11-20 10:48:09
+## **🙋‍♂️ AUTHORITY**
+- 💻 **I'm Tran Nam Phong - EHSAPA.**
+
+### Summary
 
 Directory d:\\4.Code\\ASG_CP22
-
 Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
+Summary / [Details](details.md)
 
-## Files
+#### Languages
+| language | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| C++ | 7 | 1,301 | 162 | 117 | 1,580 |
+| C | 4 | 34 | 0 | 4 | 38 |
+
+### Details
+
+#### Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
 | [ASG_CP22/ASG_CP22.cpp](/ASG_CP22/ASG_CP22.cpp) | C++ | 263 | 27 | 5 | 295 |
@@ -25,10 +36,6 @@ Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
 | [ASG_CP22/menu.hpp](/ASG_CP22/menu.hpp) | C++ | 28 | 0 | 3 | 31 |
 | [ASG_CP22/output.txt](/ASG_CP22/output.txt) | C | 0 | 0 | 1 | 1 |
 
-# **ASSIGNMENT COMPETITVE PROGRAM 2022**
-
-## **🙋‍♂️ AUTHORITY**
-- 💻 **I'm Tran Nam Phong - EHSAPA.**
 
 ## 🧠 **QUẢN LÝ FILE KHÁCH HÀNG C++**
 - This program use <a href="https://www.w3schools.com/cpp/" target="_blank"> <img src="https://user-images.githubusercontent.com/82562559/189319194-55e984e0-f0e5-4d2c-9676-48fc5b2ca815.png" alt="cplusplus" width="40" height="40"/> </a>  Language and use Visual Studio Code 2022 to setting entertainment and run it by Window Powershell Terminal.
