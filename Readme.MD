@@ -10,9 +10,8 @@
 
 # Summary
 
-Directory d:\\4.Code\\ASG_CP22
 
-Total : 10 files,  1353 codes, 162 comments, 137 blanks, all 1652 lines
+Total : 8 files,  1353 codes, 162 comments, 137 blanks, all 1652 lines
 
 #### Languages
 
