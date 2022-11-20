@@ -2,6 +2,7 @@
      <a href="https://www.facebook.com/pg.8.rzk/"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0&width=600&lines=THE+PROJECT+IS+CREATED+BY+TRẦN+NAM+PHONG" alt="Typing SVG" />
      </a>
  </p>
+ 
 # **ASSIGNMENT COMPETITVE PROGRAM 2022**
 
 ## **🙋‍♂️ AUTHORITY**
@@ -31,7 +32,7 @@ Total : 10 files,  1353 codes, 162 comments, 137 blanks, all 1652 lines
 #### Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| [ASG_CP22/ASG_CP22.cpp](/ASG_CP22/ASG_CP22.cpp) | C++ | 263 | 27 | 5 | 295 |
+| [ASG_CP22/ASG_CP22.cpp]([/ASG_CP22/ASG_CP22.cpp](https://github.com/Leon28Phongretzka/Assignment_Competitive_Prg22/blob/main/ASG_CP22.cpp)) | C++ | 263 | 27 | 5 | 295 |
 | [ASG_CP22/ConsoleTable.cpp](/ASG_CP22/ConsoleTable.cpp) | C++ | 127 | 0 | 35 | 162 |
 | [ASG_CP22/ConsoleTable.h](/ASG_CP22/ConsoleTable.h) | C++ | 52 | 62 | 59 | 173 |
 | [ASG_CP22/Readme.md](/ASG_CP22/Readme.md) | Markdown | 22 | 0 | 8 | 30 |
