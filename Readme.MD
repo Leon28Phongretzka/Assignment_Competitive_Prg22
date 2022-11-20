@@ -7,17 +7,23 @@
 ## **🙋‍♂️ AUTHORITY**
 - 💻 **I'm Tran Nam Phong - EHSAPA.**
 
-### Summary
+# Summary
 
 Directory d:\\4.Code\\ASG_CP22
-Total : 11 files,  1335 codes, 162 comments, 121 blanks, all 1618 lines
-Summary / [Details](details.md)
+
+Total : 10 files,  1353 codes, 162 comments, 137 blanks, all 1652 lines
 
 #### Languages
 | language | files | code | comment | blank | total |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| C++ | 7 | 1,301 | 162 | 117 | 1,580 |
-| C | 4 | 34 | 0 | 4 | 38 |
+| C++ | 5 | 1,265 | 162 | 113 | 1,540 |
+| Markdown | 3 | 55 | 0 | 22 | 77 |
+| C | 2 | 33 | 0 | 2 | 35 |
+
+## Directories
+| path | files | code | comment | blank | total |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| . | 10 | 1,353 | 162 | 137 | 1,652 |
 
 ### Details
 
@@ -27,15 +33,13 @@ Summary / [Details](details.md)
 | [ASG_CP22/ASG_CP22.cpp](/ASG_CP22/ASG_CP22.cpp) | C++ | 263 | 27 | 5 | 295 |
 | [ASG_CP22/ConsoleTable.cpp](/ASG_CP22/ConsoleTable.cpp) | C++ | 127 | 0 | 35 | 162 |
 | [ASG_CP22/ConsoleTable.h](/ASG_CP22/ConsoleTable.h) | C++ | 52 | 62 | 59 | 173 |
-| [ASG_CP22/SS.cpp](/ASG_CP22/SS.cpp) | C++ | 8 | 0 | 1 | 9 |
-| [ASG_CP22/addmorecus.txt](/ASG_CP22/addmorecus.txt) | C | 0 | 0 | 1 | 1 |
+| [ASG_CP22/Readme.md](/ASG_CP22/Readme.md) | Markdown | 22 | 0 | 8 | 30 |
+| [ASG_CP22/countline.md](/ASG_CP22/countline.md) | Markdown | 14 | 0 | 8 | 22 |
 | [ASG_CP22/customer.cpp](/ASG_CP22/customer.cpp) | C++ | 764 | 68 | 11 | 843 |
 | [ASG_CP22/customer.h](/ASG_CP22/customer.h) | C++ | 59 | 5 | 3 | 67 |
-| [ASG_CP22/data1.txt](/ASG_CP22/data1.txt) | C | 19 | 0 | 1 | 20 |
+| [ASG_CP22/data1.txt](/ASG_CP22/data1.txt) | C | 18 | 0 | 1 | 19 |
 | [ASG_CP22/data_original.txt](/ASG_CP22/data_original.txt) | C | 15 | 0 | 1 | 16 |
-| [ASG_CP22/menu.hpp](/ASG_CP22/menu.hpp) | C++ | 28 | 0 | 3 | 31 |
-| [ASG_CP22/output.txt](/ASG_CP22/output.txt) | C | 0 | 0 | 1 | 1 |
-
+| [ASG_CP22/details.md](/ASG_CP22/details.md) | Markdown | 19 | 0 | 6 | 25 |
 
 ## 🧠 **QUẢN LÝ FILE KHÁCH HÀNG C++**
 - This program use <a href="https://www.w3schools.com/cpp/" target="_blank"> <img src="https://user-images.githubusercontent.com/82562559/189319194-55e984e0-f0e5-4d2c-9676-48fc5b2ca815.png" alt="cplusplus" width="40" height="40"/> </a>  Language and use Visual Studio Code 2022 to setting entertainment and run it by Window Powershell Terminal.
