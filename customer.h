@@ -52,10 +52,10 @@ unsigned long long Str_to_int(string str);                                      
 int partitionAsc(vector<Customer> &customer, int left, int right, int opt);                                                                             // partition for quick sort ascending
 int partitionDesc(vector<Customer> &customer, int left, int right, int opt);                                                                            // partition for quick sort descending 
 
-void ValidateID(string ID);                                                                                                                            // validate ID
-void ValidatePhone(string phone);                                                                                                                      // validate phone
-void ValidateEmail(string email);                                                                                                                      // validate email
-void ValidateCurrency(string currency);                                                                                                                // validate currency
+bool ValidateID(string ID);                                                                                                                            // validate ID
+bool ValidatePhone(string phone);                                                                                                                      // validate phone
+bool ValidateEmail(string email);                                                                                                                      // validate email
+bool ValidateCurrency(string currency);                                                                                                                // validate currency
 // Add, Edit, Delete Data
 void AddCustomer(vector<Customer> &customers);                                                                                                          // add customer
 void EditCustomer(vector<Customer> &customers);                                                                                                         // edit customer

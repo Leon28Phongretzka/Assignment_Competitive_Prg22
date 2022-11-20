@@ -245,7 +245,7 @@ int partitionDesc(vector<Customer> &customer, int left, int right, int opt)
     return i;
 }
 // Validate Mail
-void ValidateEmail(string email)
+bool ValidateEmail(string email)
 {
     // check email use regex
     regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");   // regex pattern for email validation
@@ -265,56 +265,38 @@ void ValidateEmail(string email)
     }
 }
 // Validate ID
-void ValidateID(string ID)
+bool ValidateID(string ID)
 {
     // check ID use regex
-    regex pattern("([0-9]{4})");   // regex pattern for ID validation
-    // KH : KH
+    // [0-9]{1} : 1 number
+    // [0-9]{2} : 2 number
+    // [0-9]{3} : 3 number
     // [0-9]{4} : 4 number
-    if (regex_match(ID, pattern))
+    regex pattern1("[0-9]{1}");   // regex pattern for ID validation
+    regex pattern2("[0-9]{2}");   // regex pattern for ID validation
+    regex pattern3("[0-9]{3}");   // regex pattern for ID validation
+    while(regex_match(ID, pattern1) || regex_match(ID, pattern2) || regex_match(ID, pattern3))
     {
-        cout << "ID is valid" << endl;
-    }
-    else
-    {
-        cout << "ID is invalid" << endl;
+        // cout << "ID is valid" << endl;
+        return true;
     }
 }
 
 // Validate Phone
-void ValidatePhone(string phone)
+bool ValidatePhone(string phone)
 {
     // check phone use regex
     regex pattern("(\\+84|0)(\\d{9,10})");   // regex pattern for phone validation
     // (\\+84|0) : +84 or 0
     // (\\d{9,10}) : 9 or 10 digit
-    if (regex_match(phone, pattern))
+    while(regex_match(phone, pattern))
     {
         cout << "Phone is valid" << endl;
-    }
-    else
-    {
-        cout << "Phone is invalid" << endl;
+        return true;
     }
 }
-
 // Validate Currency
-void ValidateCurrency(string currency)
-{
-    // check currency use regex
-    regex pattern("(\\d+)(\\.|,)?(\\d*)");   // regex pattern for currency validation
-    // (\\d+) : one or more digit
-    // (\\.|,)? : zero or one occurrence of . or ,
-    // (\\d*) : zero or more digit
-    if (regex_match(currency, pattern))
-    {
-        cout << "Currency is valid" << endl;
-    }
-    else
-    {
-        cout << "Currency is invalid" << endl;
-    }
-}
+
 
 
 // add Customer to vector and update file after add
@@ -324,6 +306,12 @@ void AddCustomer(vector<Customer> &customers)
     string ID, name, email, phone, bill, currency, service, feedback, address;
     cout << "Enter ID: ";
     cin >> ID;
+    // if ID is not valid, ask user to enter again
+    if(ValidateID(ID) == false)
+    {
+        cout << "Try to enter again: ";
+        cin >> ID;
+    }
     // if ID exist, return
     for (int i = 0; i < customers.size(); i++)
     {
@@ -341,14 +329,60 @@ void AddCustomer(vector<Customer> &customers)
     // ValidateEmail(email);
     cout << "Enter phone: ";
     cin >> phone;
-    cout << "Enter bill: ";
+    cout << "Enter currency: " << '\t';
+        // Choose currency
+        cout << "1. USD" << '\t';
+        cout << "2. VND" << '\t';
+        cout << "3. EUR" << '\t';
+        cout << "4. GBP" << '\t';
+        int choose_crc;
+        cin >> choose_crc;
+        switch (choose_crc)
+        {
+            case 1:
+                currency = "USD";
+                break;
+            case 2:
+                currency = "VND";
+                break;
+            case 3:
+                currency = "EUR";
+                break;
+            case 4:
+                currency = "GBP";
+                break;
+        }
+    cout << "Enter Bill: ";
     cin >> bill;
-    cout << "Enter currency: ";
-    cin >> currency;
     cout << "Enter service: ";
     cin >> service;
-    cout << "Enter feedback: ";
-    cin >> feedback;
+    cout << "Choose feedback: " << '\t';
+    // Choose feedback
+    cout << "1. 5*" << '\t';
+    cout << "2. 4*" << '\t';
+    cout << "3. 3*" << '\t';
+    cout << "4. 2*" << '\t';
+    cout << "5. 1*" << '\t';
+    int choose_fb;
+    cin >> choose_fb;
+    switch (choose_fb)
+    {
+        case 1:
+            feedback = "5*";
+            break;
+        case 2:
+            feedback = "4*";
+            break;
+        case 3:
+            feedback = "3*";
+            break;
+        case 4:
+            feedback = "2*";
+            break;
+        case 5:
+            feedback = "1*";
+            break;
+    }
     cout << "Enter address: ";
     cin.ignore();
     getline(cin, address);
@@ -359,11 +393,11 @@ void AddCustomer(vector<Customer> &customers)
     ofstream input(FILE_PATH);
     // Get the title line
     cout << customers.size() << endl;
-    input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+    input << "ID" << setw(10) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
     for (int i = 0; i < customers.size(); i++)
     {
         // write data to file and set space between data to 30
-        input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+        input << left << setw(10) << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
     }
     input.close();
     cout << customers[customers.size()-1] << endl;
@@ -375,6 +409,12 @@ void EditCustomer(vector<Customer> &customers)
     string ID, name, email, phone, bill, currency, service, feedback, address;
     cout << "Enter ID: ";
     cin >> ID;
+    // if ID is not valid, ask user to enter again
+    if(ValidateID(ID) == false)
+    {
+        cout << "Try to enter again: ";
+        cin >> ID;
+    }
     // if ID not exist, return
     for (int i = 0; i < customers.size(); i++)
     {
@@ -387,14 +427,60 @@ void EditCustomer(vector<Customer> &customers)
             cin >> email;
             cout << "Enter phone: ";
             cin >> phone;
-            cout << "Enter bill: ";
+            cout << "Enter currency: " << '\t';
+            // Choose currency
+            cout << "1. USD" << '\t';
+            cout << "2. VND" << '\t';
+            cout << "3. EUR" << '\t';
+            cout << "4. GBP" << '\t';
+            int choose_crc;
+            cin >> choose_crc;
+            switch (choose_crc)
+            {
+                case 1:
+                    currency = "USD";
+                    break;
+                case 2:
+                    currency = "VND";
+                    break;
+                case 3:
+                    currency = "EUR";
+                    break;
+                case 4:
+                    currency = "GBP";
+                    break;
+            }
+            cout << "Enter Bill: ";
             cin >> bill;
-            cout << "Enter currency: ";
-            cin >> currency;
             cout << "Enter service: ";
             cin >> service;
-            cout << "Enter feedback: ";
-            cin >> feedback;
+            cout << "Choose feedback: " << '\t';
+            // Choose feedback
+            cout << "1. 5*" << '\t';
+            cout << "2. 4*" << '\t';
+            cout << "3. 3*" << '\t';
+            cout << "4. 2*" << '\t';
+            cout << "5. 1*" << '\t';
+            int choose_feedback;
+            cin >> choose_feedback;
+            switch (choose_feedback)
+            {
+                case 1:
+                    feedback = "5*";
+                    break;
+                case 2:
+                    feedback = "4*";
+                    break;
+                case 3:
+                    feedback = "3*";
+                    break;
+                case 4:
+                    feedback = "2*";
+                    break;
+                case 5:
+                    feedback = "1*";
+                    break;
+            }
             cout << "Enter address: ";
             cin.ignore();
             getline(cin, address);
@@ -409,13 +495,15 @@ void EditCustomer(vector<Customer> &customers)
             // Edit customer to file data1.txt
             ofstream input(FILE_PATH);
             // Get the title line
-            input << "ID" << setw(30) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
+            input << "ID" << setw(10) << "Name" << setw(30) << "Email" << setw(30) << "Phone" << setw(30) << "Bill" << setw(30) << "Currency" << setw(30) << "Service" << setw(30) << "Feedback" << setw(30) << "Address" << endl;
             for (int i = 0; i < customers.size(); i++)
             {
                 // write data to file and set space between data to 30
-                input << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
+                input << left << setw(10) << customers[i].getID() << setw(30) << customers[i].getName() << setw(30) << customers[i].getEmail() << setw(30) << customers[i].getPhone() << setw(30) << customers[i].getBill() << setw(30) << customers[i].getCurrency() << setw(30) << customers[i].getService() << setw(30) << customers[i].getFeedback() << setw(30) << customers[i].getAddress() << endl;
             }
             input.close();
+            // print customer after edit
+            cout << customers[i] << endl;
             return;
         }
     }
